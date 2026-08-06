@@ -13,14 +13,15 @@ body{
     color:white;
     display:flex;
     justify-content:center;
-    align-items:center;
-    height:100vh;
+    align-items:flex-start;
+    min-height:100vh;
     text-align:center;
 }
 
 .container{
-    max-width:600px;
-    padding:40px;
+    max-width:800px;
+    width:90%;
+    padding:50px 20px;
 }
 
 h1{
@@ -49,6 +50,37 @@ p{
 .button:hover{
     opacity:0.9;
 }
+
+.small-text{
+    font-size:14px;
+    color:#888;
+    margin-top:20px;
+}
+
+.twitch-section{
+    margin-top:60px;
+}
+
+.twitch-section h2{
+    margin-bottom:20px;
+}
+
+.twitch-wrapper{
+    position:relative;
+    width:100%;
+    padding-top:56.25%;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.twitch-wrapper iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    border:none;
+}
 </style>
 
 </head>
@@ -70,9 +102,24 @@ p{
     Leave a Tip
 </a>
 
-<p style="font-size:14px;color:#888;margin-top:20px;">
+<p class="small-text">
 All digital purchases are non-refundable.
 </p>
+
+<div class="twitch-section">
+
+<h2>🎥 Live on Twitch</h2>
+
+<div class="twitch-wrapper">
+
+<iframe
+src="https://player.twitch.tv/?channel=sweetlittlemads&parent=sweetlittlemads.co.uk"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</div>
 
 </div>
 
