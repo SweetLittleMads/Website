@@ -1,127 +1,1132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SweetLittleMads</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SweetLittleMads — official links, support, socials, wishlist and Twitch." />
+  <meta name="theme-color" content="#09080b" />
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,Helvetica,sans-serif;
-    background:#121212;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    min-height:100vh;
-    text-align:center;
-}
+  <title>SweetLittleMads</title>
 
-.container{
-    max-width:800px;
-    width:90%;
-    padding:50px 20px;
-}
+  <style>
+    :root {
+      --bg: #09080b;
+      --pink: #ff4f9f;
+      --pink2: #ff2f88;
+      --purple: #9b5cff;
+      --muted: #aaa4ad;
+      --text: #ffffff;
+    }
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-p{
-    font-size:20px;
-    color:#cccccc;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.button{
-    display:inline-block;
-    margin-top:35px;
-    background:#ff4fa0;
-    color:white;
-    text-decoration:none;
-    padding:18px 40px;
-    border-radius:12px;
-    font-size:22px;
-    font-weight:bold;
-    transition:opacity 0.2s ease;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
 
-.button:hover{
-    opacity:0.9;
-}
+      color: var(--text);
 
-.small-text{
-    font-size:14px;
-    color:#888;
-    margin-top:20px;
-}
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
 
-.twitch-section{
-    margin-top:60px;
-}
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(255, 79, 159, 0.16),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(155, 92, 255, 0.13),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 55% 90%,
+          rgba(255, 47, 136, 0.09),
+          transparent 34%
+        ),
+        var(--bg);
+    }
 
-.twitch-section h2{
-    margin-bottom:20px;
-}
+    body::before {
+      content: "";
 
-.twitch-wrapper{
-    position:relative;
-    width:100%;
-    padding-top:56.25%;
-    border-radius:12px;
-    overflow:hidden;
-}
+      position: fixed;
+      inset: -25%;
 
-.twitch-wrapper iframe{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    border:none;
-}
-</style>
+      pointer-events: none;
+      z-index: -2;
 
+      background:
+        radial-gradient(
+          circle at 30% 35%,
+          rgba(255, 79, 159, 0.20),
+          transparent 18%
+        ),
+        radial-gradient(
+          circle at 70% 45%,
+          rgba(155, 92, 255, 0.18),
+          transparent 20%
+        );
+
+      filter: blur(70px);
+
+      animation:
+        drift
+        16s
+        ease-in-out
+        infinite
+        alternate;
+    }
+
+    body::after {
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      z-index: -1;
+
+      pointer-events: none;
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px
+        );
+
+      background-size: 48px 48px;
+    }
+
+    @keyframes drift {
+      from {
+        transform:
+          translate3d(-2%, -1%, 0)
+          scale(1);
+      }
+
+      to {
+        transform:
+          translate3d(3%, 2%, 0)
+          scale(1.08);
+      }
+    }
+
+    .wrap {
+      width: min(100%, 760px);
+
+      margin: 0 auto;
+
+      padding:
+        46px
+        18px
+        64px;
+    }
+
+    .hero {
+      text-align: center;
+
+      animation:
+        fadeUp
+        0.7s
+        ease
+        both;
+    }
+
+    .avatar-shell {
+      position: relative;
+
+      width: 164px;
+      height: 164px;
+
+      margin:
+        0
+        auto
+        24px;
+
+      padding: 3px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--purple),
+          #ff8bc1
+        );
+
+      box-shadow:
+        0
+        0
+        45px
+        rgba(255, 79, 159, 0.24);
+    }
+
+    .avatar-shell::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -12px;
+
+      z-index: -1;
+
+      border-radius: inherit;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink),
+          var(--purple)
+        );
+
+      filter: blur(20px);
+
+      opacity: 0.45;
+
+      animation:
+        pulseGlow
+        3.6s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes pulseGlow {
+      0%,
+      100% {
+        transform: scale(0.98);
+        opacity: 0.34;
+      }
+
+      50% {
+        transform: scale(1.05);
+        opacity: 0.62;
+      }
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+
+      background: #17131a;
+
+      border:
+        5px
+        solid
+        #0d0a0f;
+    }
+
+    h1 {
+      margin: 0;
+
+      font-size:
+        clamp(
+          40px,
+          8vw,
+          58px
+        );
+
+      line-height: 0.98;
+
+      letter-spacing: -2.3px;
+
+      font-weight: 850;
+    }
+
+    .tagline {
+      margin:
+        14px
+        0
+        0;
+
+      color: var(--muted);
+
+      font-size: 15px;
+
+      letter-spacing: 0.35px;
+    }
+
+    .support {
+      margin-top: 30px;
+    }
+
+    .support h2 {
+      margin:
+        0
+        0
+        9px;
+
+      font-size: 22px;
+    }
+
+    .support p {
+      max-width: 540px;
+
+      margin:
+        0
+        auto;
+
+      color: #bbb5be;
+
+      line-height: 1.65;
+
+      font-size: 15.5px;
+    }
+
+    .tip {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-width: 250px;
+      min-height: 60px;
+
+      margin-top: 24px;
+
+      padding:
+        15px
+        28px;
+
+      border-radius: 18px;
+
+      text-decoration: none;
+
+      color: white;
+
+      font-size: 18px;
+      font-weight: 800;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink2),
+          #ff5eaa
+        );
+
+      box-shadow:
+        0
+        16px
+        45px
+        rgba(255, 47, 136, 0.30);
+
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+    }
+
+    .tip:hover {
+      transform:
+        translateY(-3px)
+        scale(1.015);
+
+      box-shadow:
+        0
+        22px
+        58px
+        rgba(255, 47, 136, 0.42);
+
+      filter: brightness(1.07);
+    }
+
+    .divider {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      margin:
+        38px
+        0;
+
+      color: var(--pink);
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+
+      height: 1px;
+
+      flex: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 79, 159, 0.45),
+          transparent
+        );
+    }
+
+    .links {
+      display: grid;
+
+      gap: 14px;
+    }
+
+    .link-card {
+      position: relative;
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        54px
+        1fr
+        26px;
+
+      align-items: center;
+
+      gap: 15px;
+
+      min-height: 82px;
+
+      padding:
+        14px
+        18px;
+
+      color: white;
+
+      text-decoration: none;
+
+      border:
+        1px
+        solid
+        rgba(255, 255, 255, 0.10);
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.07),
+          rgba(255, 255, 255, 0.03)
+        );
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0
+        18px
+        60px
+        rgba(0, 0, 0, 0.35);
+
+      transition:
+        transform 0.22s ease,
+        border-color 0.22s ease,
+        background 0.22s ease;
+
+      animation:
+        fadeUp
+        0.7s
+        ease
+        both;
+    }
+
+    .link-card::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          110deg,
+          transparent 25%,
+          rgba(255, 255, 255, 0.07),
+          transparent 65%
+        );
+
+      transform:
+        translateX(-120%);
+
+      transition:
+        transform
+        0.65s
+        ease;
+
+      pointer-events: none;
+    }
+
+    .link-card:hover {
+      transform:
+        translateY(-4px);
+
+      border-color:
+        rgba(255, 79, 159, 0.42);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 79, 159, 0.10),
+          rgba(255, 255, 255, 0.04)
+        );
+    }
+
+    .link-card:hover::after {
+      transform:
+        translateX(120%);
+    }
+
+    .link-card:nth-child(1) {
+      animation-delay: 0.08s;
+    }
+
+    .link-card:nth-child(2) {
+      animation-delay: 0.14s;
+    }
+
+    .link-card:nth-child(3) {
+      animation-delay: 0.20s;
+    }
+
+    .link-card:nth-child(4) {
+      animation-delay: 0.26s;
+    }
+
+    .brand-icon {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 15px;
+
+      font-weight: 900;
+      font-size: 22px;
+
+      border:
+        1px
+        solid
+        rgba(255, 255, 255, 0.08);
+    }
+
+    .onlyfans {
+      background:
+        linear-gradient(
+          135deg,
+          #00aff0,
+          #1c8fd0
+        );
+    }
+
+    .x {
+      background: #050505;
+    }
+
+    .instagram {
+      background:
+        linear-gradient(
+          135deg,
+          #833ab4,
+          #fd1d1d,
+          #fcb045
+        );
+    }
+
+    .throne {
+      background:
+        linear-gradient(
+          135deg,
+          #ff4f9f,
+          #8e58ff
+        );
+    }
+
+    .link-title {
+      font-size: 18px;
+
+      font-weight: 800;
+    }
+
+    .link-sub {
+      margin-top: 3px;
+
+      color: #8e8892;
+
+      font-size: 13px;
+    }
+
+    .arrow {
+      color: #ff6ab0;
+
+      font-size: 28px;
+
+      transition:
+        transform
+        0.22s
+        ease;
+    }
+
+    .link-card:hover .arrow {
+      transform:
+        translateX(4px);
+    }
+
+    .twitch-card {
+      margin-top: 6px;
+
+      padding: 22px;
+
+      border:
+        1px
+        solid
+        rgba(145, 71, 255, 0.32);
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(145, 71, 255, 0.10),
+          rgba(255, 79, 159, 0.05)
+        );
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      box-shadow:
+        0
+        18px
+        60px
+        rgba(0, 0, 0, 0.35);
+
+      animation:
+        fadeUp
+        0.8s
+        ease
+        both;
+    }
+
+    .twitch-head {
+      display: flex;
+
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 14px;
+
+      margin-bottom: 16px;
+    }
+
+    .twitch-brand {
+      display: flex;
+
+      align-items: center;
+
+      gap: 11px;
+
+      font-weight: 850;
+
+      font-size: 19px;
+    }
+
+    .twitch-logo {
+      width: 42px;
+      height: 42px;
+
+      display: grid;
+
+      place-items: center;
+
+      border-radius: 13px;
+
+      background: #9147ff;
+
+      box-shadow:
+        0
+        10px
+        28px
+        rgba(145, 71, 255, 0.28);
+    }
+
+    .status {
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      padding:
+        8px
+        11px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255, 255, 255, 0.06);
+
+      color: #cbc6ce;
+
+      font-size: 12px;
+
+      font-weight: 800;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+
+      border-radius: 50%;
+
+      background: #ff375f;
+
+      box-shadow:
+        0
+        0
+        12px
+        rgba(255, 55, 95, 0.8);
+
+      animation:
+        dotPulse
+        1.5s
+        ease-in-out
+        infinite;
+    }
+
+    @keyframes dotPulse {
+      0%,
+      100% {
+        opacity: 0.45;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .player {
+      position: relative;
+
+      width: 100%;
+
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+
+      border-radius: 18px;
+
+      background: #050506;
+
+      box-shadow:
+        0
+        14px
+        34px
+        rgba(0, 0, 0, 0.4);
+    }
+
+    .player iframe {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      border: 0;
+    }
+
+    .twitch-btn {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 54px;
+
+      margin-top: 16px;
+
+      border-radius: 15px;
+
+      background: #9147ff;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-weight: 800;
+
+      transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        filter 0.22s ease;
+    }
+
+    .twitch-btn:hover {
+      transform:
+        translateY(-3px);
+
+      filter: brightness(1.08);
+
+      box-shadow:
+        0
+        14px
+        36px
+        rgba(145, 71, 255, 0.28);
+    }
+
+    footer {
+      margin-top: 40px;
+
+      text-align: center;
+
+      color: #6d6770;
+
+      font-size: 12px;
+    }
+
+    .heart {
+      display: block;
+
+      margin-top: 8px;
+
+      color: var(--pink);
+
+      font-size: 18px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+
+        transform:
+          translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+
+        transform:
+          translateY(0);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .wrap {
+        padding:
+          32px
+          14px
+          52px;
+      }
+
+      .avatar-shell {
+        width: 134px;
+        height: 134px;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      .tagline {
+        font-size: 14px;
+      }
+
+      .link-card {
+        grid-template-columns:
+          48px
+          1fr
+          24px;
+
+        padding:
+          12px
+          14px;
+      }
+
+      .brand-icon {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 13px;
+      }
+
+      .twitch-card {
+        padding: 15px;
+      }
+
+      .twitch-head {
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <main class="wrap">
 
-<h1>SweetLittleMads</h1>
+    <section class="hero">
 
-<p>💜 Support my content</p>
+      <div class="avatar-shell">
+        <img
+          class="avatar"
+          src="profile.jpg"
+          alt="SweetLittleMads profile photo"
+        />
+      </div>
 
-<p>Your support helps me continue creating content. Thank you!</p>
+      <h1>SweetLittleMads</h1>
 
-<a class="button"
-   href="https://buy.stripe.com/8x26oG6SC8ZKaw51ox7kc00"
-   target="_blank"
-   rel="noopener noreferrer">
-    Leave a Tip
-</a>
+      <p class="tagline">
+        Gaming • Streaming • Exclusive Content
+      </p>
 
-<p class="small-text">
-All digital purchases are non-refundable.
-</p>
+      <div class="support">
+        <h2>
+          Support my content ♡
+        </h2>
 
-<div class="twitch-section">
+        <p>
+          Your support helps me continue creating content
+          and streaming. Thank you for supporting me.
+        </p>
+      </div>
 
-<h2>🎥 Live on Twitch</h2>
+      <a
+        class="tip"
+        href="https://buy.stripe.com/8x26oG6SC8ZKaw51ox7kc00"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ♡ Leave a Tip
+      </a>
 
-<div class="twitch-wrapper">
+    </section>
 
-<iframe
-src="https://player.twitch.tv/?channel=sweetlittlemads&parent=sweetlittlemads.co.uk"
-allowfullscreen>
-</iframe>
+    <div class="divider">
+      ✦
+    </div>
 
-</div>
+    <section class="links">
 
-</div>
+      <a
+        class="link-card"
+        href="https://onlyfans.com/sweetlittlemads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="brand-icon onlyfans">
+          OF
+        </div>
 
-</div>
+        <div>
+          <div class="link-title">
+            OnlyFans
+          </div>
+
+          <div class="link-sub">
+            Exclusive content
+          </div>
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+      </a>
+
+      <a
+        class="link-card"
+        href="https://x.com/sweetlittlemads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="brand-icon x">
+          X
+        </div>
+
+        <div>
+          <div class="link-title">
+            X
+          </div>
+
+          <div class="link-sub">
+            Follow me
+          </div>
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+      </a>
+
+      <a
+        class="link-card"
+        href="https://www.instagram.com/sweetlittlemads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="brand-icon instagram">
+          ◎
+        </div>
+
+        <div>
+          <div class="link-title">
+            Instagram
+          </div>
+
+          <div class="link-sub">
+            Photos & updates
+          </div>
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+      </a>
+
+      <a
+        class="link-card"
+        href="https://throne.com/sweetlittlemads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="brand-icon throne">
+          ♡
+        </div>
+
+        <div>
+          <div class="link-title">
+            Wishlist
+          </div>
+
+          <div class="link-sub">
+            My Throne wishlist
+          </div>
+        </div>
+
+        <div class="arrow">
+          ›
+        </div>
+      </a>
+
+    </section>
+
+    <div class="divider">
+      ✦
+    </div>
+
+    <section class="twitch-card">
+
+      <div class="twitch-head">
+
+        <div class="twitch-brand">
+          <div class="twitch-logo">
+            T
+          </div>
+
+          <span>
+            Twitch
+          </span>
+        </div>
+
+        <div class="status">
+          <span class="dot"></span>
+          LIVE / OFFLINE
+        </div>
+
+      </div>
+
+      <div
+        class="player"
+        id="twitch-player"
+      ></div>
+
+      <a
+        class="twitch-btn"
+        href="https://www.twitch.tv/sweetlittlemads"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Watch on Twitch
+      </a>
+
+    </section>
+
+    <footer>
+      © 2026 SweetLittleMads
+
+      <span class="heart">
+        ♡
+      </span>
+    </footer>
+
+  </main>
+
+  <script>
+    const holder =
+      document.getElementById("twitch-player");
+
+    const parentDomain =
+      window.location.hostname ||
+      "sweetlittlemads.com";
+
+    const iframe =
+      document.createElement("iframe");
+
+    iframe.src =
+      "https://player.twitch.tv/?channel=sweetlittlemads" +
+      "&parent=" +
+      encodeURIComponent(parentDomain) +
+      "&autoplay=false";
+
+    iframe.allowFullscreen = true;
+
+    iframe.setAttribute(
+      "allow",
+      "autoplay; fullscreen"
+    );
+
+    iframe.setAttribute(
+      "title",
+      "SweetLittleMads Twitch stream"
+    );
+
+    holder.appendChild(iframe);
+  </script>
 
 </body>
 </html>
