@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,13 +14,42 @@
     box-sizing:border-box;
 }
 
+html{
+    min-height:100%;
+}
+
 body{
     margin:0;
+    min-height:100vh;
+
     font-family:Arial,Helvetica,sans-serif;
-    background:#121212;
+
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(255,79,160,.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 15% 65%,
+            rgba(125,70,255,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,79,160,.07),
+            transparent 30%
+        ),
+        #121212;
+
+    background-attachment:fixed;
+
     color:white;
     text-align:center;
 }
+
+
+/* MAIN CONTAINER */
 
 .container{
     max-width:800px;
@@ -26,6 +57,9 @@ body{
     margin:auto;
     padding:50px 20px;
 }
+
+
+/* TITLE */
 
 h1{
     font-size:48px;
@@ -37,24 +71,39 @@ p{
     color:#cccccc;
 }
 
+
 /* TIP BUTTON */
 
 .button{
     display:inline-block;
+
     margin-top:25px;
+
     background:#ff4fa0;
     color:white;
+
     text-decoration:none;
+
     padding:18px 40px;
+
     border-radius:12px;
+
     font-size:22px;
     font-weight:bold;
-    transition:transform .2s ease, opacity .2s ease;
+
+    box-shadow:0 8px 30px rgba(255,79,160,.15);
+
+    transition:
+        transform .2s ease,
+        opacity .2s ease,
+        box-shadow .2s ease;
 }
 
 .button:hover{
-    opacity:.9;
+    opacity:.95;
     transform:translateY(-2px);
+
+    box-shadow:0 10px 35px rgba(255,79,160,.25);
 }
 
 .small-text{
@@ -75,19 +124,34 @@ p{
     display:flex;
     align-items:center;
     justify-content:center;
+
     min-height:98px;
-    background:#1c1c1c;
-    border:1px solid #333;
+
+    background:rgba(28,28,28,.90);
+
+    border:1px solid #3a3a3a;
+
     border-radius:16px;
+
     padding:18px 20px;
+
     color:white;
     text-decoration:none;
-    transition:transform .2s ease, background .2s ease;
+
+    backdrop-filter:blur(8px);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
 }
 
 .featured-link:hover{
     transform:translateY(-2px);
+
     background:#242424;
+
+    border-color:#555;
 }
 
 .featured-title{
@@ -106,10 +170,14 @@ p{
 
 .social-links{
     display:flex;
+
     justify-content:center;
     align-items:stretch;
+
     gap:10px;
+
     margin:15px auto 0;
+
     max-width:420px;
 }
 
@@ -117,30 +185,53 @@ p{
     flex:1;
     min-width:0;
     min-height:58px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     gap:8px;
-    background:#1c1c1c;
-    border:1px solid #333;
+
+    background:rgba(28,28,28,.90);
+
+    border:1px solid #3a3a3a;
+
     color:white;
+
     text-decoration:none;
+
     padding:10px;
+
     border-radius:12px;
+
     font-size:15px;
     font-weight:bold;
-    transition:transform .2s ease, background .2s ease;
+
+    backdrop-filter:blur(8px);
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        border-color .2s ease;
 }
 
 .social-button:hover{
     transform:translateY(-2px);
+
     background:#242424;
+
+    border-color:#555;
 }
+
+
+/* REDDIT AVATAR */
 
 .reddit-mini-avatar{
     width:38px;
     height:38px;
+
     object-fit:contain;
+
     flex-shrink:0;
 }
 
@@ -157,18 +248,28 @@ p{
 
 .twitch-wrapper{
     position:relative;
+
     width:100%;
+
     padding-top:56.25%;
+
     border-radius:12px;
+
     overflow:hidden;
+
     background:#000;
+
+    box-shadow:0 15px 50px rgba(0,0,0,.35);
 }
 
 .twitch-wrapper iframe{
     position:absolute;
+
     inset:0;
+
     width:100%;
     height:100%;
+
     border:none;
 }
 
@@ -184,6 +285,10 @@ p{
 
     h1{
         font-size:36px;
+    }
+
+    p{
+        font-size:17px;
     }
 
     .button{
@@ -211,40 +316,61 @@ p{
 
 </head>
 
+
 <body>
 
 <div class="container">
 
+
+<!-- TITLE -->
+
 <h1>SweetLittleMads</h1>
 
-<p>💜 Support my content</p>
+<p>
+💜 Support my content
+</p>
 
-<p>Your support helps me continue creating content. Thank you!</p>
+<p>
+Your support helps me continue creating content. Thank you!
+</p>
 
 
 <!-- TIP -->
 
-<a class="button" href="tip.html">
+<a
+    class="button"
+    href="tip.html">
+
     Leave a Tip
+
 </a>
 
 <p class="small-text">
-    All digital purchases are non-refundable.
+All digital purchases are non-refundable.
 </p>
 
 
-<!-- ONLYFANS FEATURED -->
+
+<!-- ONLYFANS -->
 
 <div class="featured-card">
 
-<a class="featured-link"
-   href="https://onlyfans.com/sweetlittlemads"
-   target="_blank"
-   rel="noopener noreferrer">
+<a
+    class="featured-link"
+    href="https://onlyfans.com/sweetlittlemads"
+    target="_blank"
+    rel="noopener noreferrer">
 
     <div>
-        <div class="featured-title">OnlyFans</div>
-        <div class="featured-subtitle">Exclusive content →</div>
+
+        <div class="featured-title">
+            OnlyFans
+        </div>
+
+        <div class="featured-subtitle">
+            Exclusive content →
+        </div>
+
     </div>
 
 </a>
@@ -252,48 +378,71 @@ p{
 </div>
 
 
+
 <!-- SOCIAL LINKS -->
 
 <div class="social-links">
 
-    <a class="social-button"
-       href="https://www.reddit.com/user/SweetLilMads/"
-       target="_blank"
-       rel="noopener noreferrer">
 
-        <img
-            class="reddit-mini-avatar"
-            src="reddit-avatar.png"
-            alt="SweetLittleMads Reddit avatar">
+<!-- REDDIT -->
 
-        <span>Reddit</span>
+<a
+    class="social-button"
+    href="https://www.reddit.com/user/SweetLilMads/"
+    target="_blank"
+    rel="noopener noreferrer">
 
-    </a>
+    <img
+        class="reddit-mini-avatar"
+        src="reddit-avatar.png"
+        alt="SweetLittleMads Reddit avatar">
 
+    <span>
+        Reddit
+    </span>
 
-    <a class="social-button"
-       href="https://x.com/sweetlittlemads"
-       target="_blank"
-       rel="noopener noreferrer">
-        X
-    </a>
+</a>
 
 
-    <a class="social-button"
-       href="https://www.instagram.com/sweetlittlemads"
-       target="_blank"
-       rel="noopener noreferrer">
-        Instagram
-    </a>
+
+<!-- X -->
+
+<a
+    class="social-button"
+    href="https://x.com/sweetlittlemads"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    X
+
+</a>
+
+
+
+<!-- INSTAGRAM -->
+
+<a
+    class="social-button"
+    href="https://www.instagram.com/sweetlittlemads"
+    target="_blank"
+    rel="noopener noreferrer">
+
+    Instagram
+
+</a>
+
 
 </div>
+
 
 
 <!-- TWITCH -->
 
 <div class="twitch-section">
 
-<h2>🎥 Live on Twitch</h2>
+<h2>
+🎥 Live on Twitch
+</h2>
 
 <div class="twitch-wrapper">
 
@@ -310,4 +459,5 @@ p{
 </div>
 
 </body>
+
 </html>
