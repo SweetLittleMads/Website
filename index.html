@@ -37,6 +37,8 @@ p{
     color:#cccccc;
 }
 
+/* TIP BUTTON */
+
 .button{
     display:inline-block;
     margin-top:25px;
@@ -61,49 +63,87 @@ p{
     margin-top:18px;
 }
 
-/* REDDIT */
 
-.reddit-card{
+/* FEATURED ONLYFANS */
+
+.featured-card{
     margin:45px auto 0;
     max-width:420px;
 }
 
-.reddit-link{
+.featured-link{
     display:flex;
     align-items:center;
-    gap:18px;
+    justify-content:center;
+    min-height:98px;
     background:#1c1c1c;
     border:1px solid #333;
     border-radius:16px;
-    padding:15px 20px;
+    padding:18px 20px;
     color:white;
     text-decoration:none;
-    text-align:left;
     transition:transform .2s ease, background .2s ease;
 }
 
-.reddit-link:hover{
+.featured-link:hover{
     transform:translateY(-2px);
     background:#242424;
 }
 
-.reddit-avatar{
-    width:68px;
-    height:68px;
+.featured-title{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.featured-subtitle{
+    margin-top:6px;
+    color:#aaa;
+    font-size:15px;
+}
+
+
+/* SOCIAL LINKS */
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:10px;
+    margin:15px auto 0;
+    max-width:420px;
+}
+
+.social-button{
+    flex:1;
+    min-width:0;
+    min-height:58px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:#1c1c1c;
+    border:1px solid #333;
+    color:white;
+    text-decoration:none;
+    padding:10px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:bold;
+    transition:transform .2s ease, background .2s ease;
+}
+
+.social-button:hover{
+    transform:translateY(-2px);
+    background:#242424;
+}
+
+.reddit-mini-avatar{
+    width:38px;
+    height:38px;
     object-fit:contain;
     flex-shrink:0;
 }
 
-.reddit-title{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.reddit-name{
-    margin-top:5px;
-    color:#aaa;
-    font-size:15px;
-}
 
 /* TWITCH */
 
@@ -132,6 +172,9 @@ p{
     border:none;
 }
 
+
+/* MOBILE */
+
 @media(max-width:600px){
 
     .container{
@@ -148,9 +191,24 @@ p{
         max-width:320px;
     }
 
+    .social-links{
+        gap:7px;
+    }
+
+    .social-button{
+        font-size:13px;
+        padding:8px 5px;
+    }
+
+    .reddit-mini-avatar{
+        width:32px;
+        height:32px;
+    }
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -163,6 +221,9 @@ p{
 
 <p>Your support helps me continue creating content. Thank you!</p>
 
+
+<!-- TIP -->
+
 <a class="button" href="tip.html">
     Leave a Tip
 </a>
@@ -172,26 +233,58 @@ p{
 </p>
 
 
-<!-- REDDIT -->
+<!-- ONLYFANS FEATURED -->
 
-<div class="reddit-card">
+<div class="featured-card">
 
-<a class="reddit-link"
-   href="https://www.reddit.com/user/SweetLilMads/"
+<a class="featured-link"
+   href="https://onlyfans.com/sweetlittlemads"
    target="_blank"
    rel="noopener noreferrer">
 
-    <img
-        class="reddit-avatar"
-        src="reddit-avatar.png"
-        alt="SweetLittleMads Reddit avatar">
-
     <div>
-        <div class="reddit-title">Reddit</div>
-        <div class="reddit-name">u/SweetLilMads</div>
+        <div class="featured-title">OnlyFans</div>
+        <div class="featured-subtitle">Exclusive content →</div>
     </div>
 
 </a>
+
+</div>
+
+
+<!-- SOCIAL LINKS -->
+
+<div class="social-links">
+
+    <a class="social-button"
+       href="https://www.reddit.com/user/SweetLilMads/"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        <img
+            class="reddit-mini-avatar"
+            src="reddit-avatar.png"
+            alt="SweetLittleMads Reddit avatar">
+
+        <span>Reddit</span>
+
+    </a>
+
+
+    <a class="social-button"
+       href="https://x.com/sweetlittlemads"
+       target="_blank"
+       rel="noopener noreferrer">
+        X
+    </a>
+
+
+    <a class="social-button"
+       href="https://www.instagram.com/sweetlittlemads"
+       target="_blank"
+       rel="noopener noreferrer">
+        Instagram
+    </a>
 
 </div>
 
@@ -212,6 +305,7 @@ p{
 </div>
 
 </div>
+
 
 </div>
 
