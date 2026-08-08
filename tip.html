@@ -21,7 +21,6 @@ html{
 body{
     margin:0;
     min-height:100vh;
-
     font-family:Arial,Helvetica,sans-serif;
 
     background:
@@ -70,29 +69,21 @@ body{
 
 h1{
     text-align:center;
-
     margin:0;
-
     font-size:32px;
 }
 
 .heart{
     text-align:center;
-
     font-size:36px;
-
     margin:12px 0 18px;
 }
 
 .subtitle{
     text-align:center;
-
     color:#aaa;
-
     margin-bottom:28px;
-
     font-size:16px;
-
     line-height:1.5;
 }
 
@@ -101,10 +92,8 @@ h1{
 
 label{
     display:block;
-
     font-size:16px;
     font-weight:bold;
-
     margin:22px 0 8px;
 }
 
@@ -113,11 +102,9 @@ textarea{
     width:100%;
 
     border:1px solid #555;
-
     border-radius:12px;
 
     background:#121212;
-
     color:white;
 
     font-family:inherit;
@@ -143,7 +130,6 @@ textarea:focus{
     align-items:center;
 
     border:1px solid #555;
-
     border-radius:12px;
 
     background:#121212;
@@ -168,9 +154,7 @@ textarea:focus{
 
 .amount-box input{
     border:0;
-
     border-radius:0;
-
     font-size:21px;
 }
 
@@ -183,20 +167,16 @@ textarea:focus{
 
 textarea{
     min-height:120px;
-
     resize:vertical;
 }
 
 
-/* SMALL HELP TEXT */
+/* HELP TEXT */
 
 .helper{
     color:#888;
-
     font-size:13px;
-
     margin-top:7px;
-
     line-height:1.4;
 }
 
@@ -211,7 +191,6 @@ textarea{
     margin-top:28px;
 
     background:#ff4fa0;
-
     color:white;
 
     padding:17px;
@@ -244,11 +223,8 @@ textarea{
 
 .refund{
     text-align:center;
-
     color:#777;
-
     font-size:12px;
-
     margin-top:22px;
 }
 
@@ -280,7 +256,6 @@ textarea{
 
     body{
         align-items:flex-start;
-
         padding:20px 12px;
     }
 
@@ -321,50 +296,11 @@ Your support helps me continue creating content.
 
 
 
+<!-- SEND FORM TO CLOUDFLARE WORKER -->
+
 <form
-    action="https://formsubmit.co/SweetLittleMads@proton.me"
+    action="https://tip-handler.of-701.workers.dev"
     method="POST">
-
-
-<!-- EMAIL SUBJECT -->
-
-<input
-    type="hidden"
-    name="_subject"
-    value="New SweetLittleMads Tip Request">
-
-
-<!-- EMAIL FORMAT -->
-
-<input
-    type="hidden"
-    name="_template"
-    value="table">
-
-
-<!-- PAGE THE FORM CAME FROM -->
-
-<input
-    type="hidden"
-    name="_url"
-    value="https://sweetlittlemads.co.uk/tip.html">
-
-
-<!-- AFTER SUBMISSION SEND TO STRIPE -->
-
-<input
-    type="hidden"
-    name="_next"
-    value="https://buy.stripe.com/8x26oG6SC8ZKaw51ox7kc00">
-
-
-<!-- DISABLE CAPTCHA -->
-
-<input
-    type="hidden"
-    name="_captcha"
-    value="false">
-
 
 
 <!-- TIP AMOUNT -->
@@ -384,7 +320,7 @@ Enter amount to tip
 <input
     type="number"
     id="amount"
-    name="Tip amount"
+    name="amount"
     min="1"
     step="0.01"
     inputmode="decimal"
@@ -404,7 +340,7 @@ Send your request / message
 
 <textarea
     id="message"
-    name="Request or message"
+    name="message"
     maxlength="1000"
     placeholder="Write your request or message here..."
     required></textarea>
@@ -426,7 +362,7 @@ Your name
 <input
     type="text"
     id="name"
-    name="Name"
+    name="name"
     maxlength="60"
     placeholder="Anonymous">
 
