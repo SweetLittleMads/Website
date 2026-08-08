@@ -1,71 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Leave a Tip | SweetLittleMads</title>
 
 <style>
+
 *{
     box-sizing:border-box;
+}
+
+html{
+    min-height:100%;
 }
 
 body{
     margin:0;
     min-height:100vh;
+
     font-family:Arial,Helvetica,sans-serif;
-    background:#121212;
+
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255,79,160,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(125,70,255,.07),
+            transparent 35%
+        ),
+        #121212;
+
+    background-attachment:fixed;
+
     color:white;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     padding:30px 15px;
 }
+
+
+/* TIP CARD */
 
 .tip-card{
     width:100%;
     max-width:480px;
-    background:#1c1c1c;
-    border:1px solid #333;
+
+    background:rgba(28,28,28,.96);
+
+    border:1px solid #3a3a3a;
     border-radius:20px;
+
     padding:30px;
+
     box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
+
+/* HEADER */
+
 h1{
     text-align:center;
+
     margin:0;
+
     font-size:32px;
 }
 
 .heart{
     text-align:center;
+
     font-size:36px;
+
     margin:12px 0 18px;
 }
 
 .subtitle{
     text-align:center;
+
     color:#aaa;
+
     margin-bottom:28px;
+
     font-size:16px;
+
     line-height:1.5;
 }
 
+
+/* FORM */
+
 label{
     display:block;
+
     font-size:16px;
     font-weight:bold;
+
     margin:22px 0 8px;
 }
+
+input,
+textarea{
+    width:100%;
+
+    border:1px solid #555;
+
+    border-radius:12px;
+
+    background:#121212;
+
+    color:white;
+
+    font-family:inherit;
+    font-size:16px;
+
+    padding:15px;
+
+    outline:none;
+
+    transition:border-color .2s ease;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#ff4fa0;
+}
+
+
+/* AMOUNT */
 
 .amount-box{
     display:flex;
     align-items:center;
+
     border:1px solid #555;
+
     border-radius:12px;
+
     background:#121212;
+
     overflow:hidden;
+
+    transition:border-color .2s ease;
 }
 
 .amount-box:focus-within{
@@ -75,85 +160,130 @@ label{
 .currency{
     font-size:24px;
     font-weight:bold;
-    padding-left:16px;
-    color:#ff4fa0;
-}
 
-input,
-textarea{
-    width:100%;
-    border:1px solid #555;
-    border-radius:12px;
-    background:#121212;
-    color:white;
-    font-family:inherit;
-    font-size:16px;
-    padding:15px;
-    outline:none;
+    padding-left:16px;
+
+    color:#ff4fa0;
 }
 
 .amount-box input{
     border:0;
+
     border-radius:0;
+
     font-size:21px;
 }
 
-input:focus,
-textarea:focus{
-    border-color:#ff4fa0;
+.amount-box input:focus{
+    border:0;
 }
+
+
+/* MESSAGE */
 
 textarea{
     min-height:120px;
+
     resize:vertical;
 }
 
+
+/* SMALL HELP TEXT */
+
 .helper{
     color:#888;
+
     font-size:13px;
+
     margin-top:7px;
+
     line-height:1.4;
 }
 
+
+/* PAYMENT BUTTON */
+
 .pay-button{
     width:100%;
+
     border:0;
+
     margin-top:28px;
+
     background:#ff4fa0;
+
     color:white;
+
     padding:17px;
+
     border-radius:12px;
+
     font-size:19px;
     font-weight:bold;
+
     cursor:pointer;
-    transition:opacity .2s ease, transform .2s ease;
+
+    box-shadow:0 8px 30px rgba(255,79,160,.12);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 .pay-button:hover{
-    opacity:.9;
+    opacity:.95;
+
     transform:translateY(-1px);
+
+    box-shadow:0 10px 35px rgba(255,79,160,.20);
 }
+
+
+/* REFUND */
 
 .refund{
     text-align:center;
+
     color:#777;
+
     font-size:12px;
+
     margin-top:22px;
 }
 
+
+/* BACK BUTTON */
+
 .back{
     display:block;
+
     text-align:center;
+
     margin-top:20px;
+
     color:#aaa;
+
     text-decoration:none;
+
+    font-size:15px;
 }
 
 .back:hover{
     color:white;
 }
 
+
+/* MOBILE */
+
 @media(max-width:520px){
+
+    body{
+        align-items:flex-start;
+
+        padding:20px 12px;
+    }
+
     .tip-card{
         padding:25px 20px;
     }
@@ -161,113 +291,200 @@ textarea{
     h1{
         font-size:28px;
     }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <div class="tip-card">
 
-<h1>Support SweetLittleMads</h1>
 
-<div class="heart">💜</div>
+<h1>
+Support SweetLittleMads
+</h1>
+
+
+<div class="heart">
+💜
+</div>
+
 
 <p class="subtitle">
 Your support helps me continue creating content.
 </p>
 
+
+
 <form
     action="https://formsubmit.co/SweetLittleMads@proton.me"
     method="POST">
 
-    <input
-        type="hidden"
-        name="_subject"
-        value="New SweetLittleMads Tip Request">
 
-    <input
-        type="hidden"
-        name="_next"
-        value="https://buy.stripe.com/8x26oG6SC8ZKaw51ox7kc00">
+<!-- EMAIL SUBJECT -->
 
-    <input
-        type="hidden"
-        name="_captcha"
-        value="false">
+<input
+    type="hidden"
+    name="_subject"
+    value="New SweetLittleMads Tip Request">
 
-    <label for="amount">
-        Enter amount to tip
-    </label>
 
-    <div class="amount-box">
-        <span class="currency">£</span>
+<!-- EMAIL FORMAT -->
 
-        <input
-            type="number"
-            id="amount"
-            name="Tip amount"
-            min="1"
-            step="0.01"
-            placeholder="10.00"
-            required>
-    </div>
+<input
+    type="hidden"
+    name="_template"
+    value="table">
 
-    <label for="message">
-        Send your request / message
-    </label>
 
-    <textarea
-        id="message"
-        name="Request or message"
-        maxlength="1000"
-        placeholder="Write your request or message here..."
-        required></textarea>
+<!-- PAGE THE FORM CAME FROM -->
 
-    <div class="helper">
-        Your message will be sent directly to me.
-    </div>
+<input
+    type="hidden"
+    name="_url"
+    value="https://sweetlittlemads.co.uk/tip.html">
 
-    <label for="name">
-        Your name
-    </label>
 
-    <input
-        type="text"
-        id="name"
-        name="Name"
-        maxlength="60"
-        placeholder="Anonymous">
+<!-- AFTER SUBMISSION SEND TO STRIPE -->
 
-    <label for="email">
-        Email (if you'd like a reply)
-    </label>
+<input
+    type="hidden"
+    name="_next"
+    value="https://buy.stripe.com/8x26oG6SC8ZKaw51ox7kc00">
 
-    <input
-        type="email"
-        id="email"
-        name="Email for reply"
-        placeholder="you@example.com">
 
-    <div class="helper">
-        Optional — only enter this if you'd like me to reply.
-    </div>
+<!-- DISABLE CAPTCHA -->
 
-    <button class="pay-button" type="submit">
-        Continue to Payment
-    </button>
+<input
+    type="hidden"
+    name="_captcha"
+    value="false">
 
-</form>
 
-<p class="refund">
-    All digital purchases are non-refundable.
-</p>
 
-<a class="back" href="index.html">
-    ← Back to SweetLittleMads
-</a>
+<!-- TIP AMOUNT -->
+
+<label for="amount">
+Enter amount to tip
+</label>
+
+
+<div class="amount-box">
+
+<span class="currency">
+£
+</span>
+
+
+<input
+    type="number"
+    id="amount"
+    name="Tip amount"
+    min="1"
+    step="0.01"
+    inputmode="decimal"
+    placeholder="10.00"
+    required>
 
 </div>
 
+
+
+<!-- MESSAGE -->
+
+<label for="message">
+Send your request / message
+</label>
+
+
+<textarea
+    id="message"
+    name="Request or message"
+    maxlength="1000"
+    placeholder="Write your request or message here..."
+    required></textarea>
+
+
+<div class="helper">
+Your message will be sent directly to me.
+</div>
+
+
+
+<!-- NAME -->
+
+<label for="name">
+Your name
+</label>
+
+
+<input
+    type="text"
+    id="name"
+    name="Name"
+    maxlength="60"
+    placeholder="Anonymous">
+
+
+
+<!-- EMAIL -->
+
+<label for="email">
+Email (if you'd like a reply)
+</label>
+
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    maxlength="254"
+    placeholder="you@example.com">
+
+
+<div class="helper">
+Optional — only enter this if you'd like me to reply.
+</div>
+
+
+
+<!-- CONTINUE -->
+
+<button
+    class="pay-button"
+    type="submit">
+
+Continue to Payment
+
+</button>
+
+
+</form>
+
+
+
+<p class="refund">
+All digital purchases are non-refundable.
+</p>
+
+
+<a
+    class="back"
+    href="index.html">
+
+← Back to SweetLittleMads
+
+</a>
+
+
+</div>
+
+
 </body>
+
 </html>
