@@ -37,7 +37,6 @@ body{
         #121212;
 
     background-attachment:fixed;
-
     color:white;
 
     display:flex;
@@ -82,8 +81,33 @@ h1{
 .subtitle{
     text-align:center;
     color:#aaa;
-    margin-bottom:28px;
+    margin-bottom:22px;
     font-size:16px;
+    line-height:1.5;
+}
+
+
+/* LIVE ALERT NOTICE */
+
+.live-alert{
+    background:rgba(255,79,160,.08);
+    border:1px solid rgba(255,79,160,.35);
+    border-radius:14px;
+    padding:15px 16px;
+    margin:0 0 25px;
+    text-align:center;
+}
+
+.live-alert-title{
+    color:#ff4fa0;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:7px;
+}
+
+.live-alert-text{
+    color:#ccc;
+    font-size:13px;
     line-height:1.5;
 }
 
@@ -98,7 +122,8 @@ label{
 }
 
 input,
-textarea{
+textarea,
+select{
     width:100%;
 
     border:1px solid #555;
@@ -118,7 +143,8 @@ textarea{
 }
 
 input:focus,
-textarea:focus{
+textarea:focus,
+select:focus{
     border-color:#ff4fa0;
 }
 
@@ -168,6 +194,62 @@ textarea:focus{
 textarea{
     min-height:120px;
     resize:vertical;
+}
+
+
+/* SOUND SELECTOR */
+
+.sound-options{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:10px;
+    margin-top:10px;
+}
+
+.sound-option{
+    position:relative;
+}
+
+.sound-option input{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.sound-option label{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    margin:0;
+    padding:13px 10px;
+
+    background:#121212;
+
+    border:1px solid #555;
+    border-radius:11px;
+
+    font-size:14px;
+    font-weight:normal;
+
+    cursor:pointer;
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        transform .15s ease;
+}
+
+.sound-option label:hover{
+    border-color:#ff4fa0;
+    transform:translateY(-1px);
+}
+
+.sound-option input:checked + label{
+    border-color:#ff4fa0;
+    background:rgba(255,79,160,.12);
+    box-shadow:0 0 0 1px rgba(255,79,160,.15);
 }
 
 
@@ -267,6 +349,10 @@ textarea{
         font-size:28px;
     }
 
+    .sound-options{
+        grid-template-columns:1fr;
+    }
+
 }
 
 </style>
@@ -295,8 +381,21 @@ Your support helps me continue creating content.
 </p>
 
 
+<div class="live-alert">
 
-<!-- SEND FORM TO CLOUDFLARE WORKER -->
+    <div class="live-alert-title">
+        ♡ Live Tip Alerts
+    </div>
+
+    <div class="live-alert-text">
+        If Maddy is currently live on Twitch or OnlyFans,
+        your name, message and selected sound will appear
+        on stream after your tip is completed.
+    </div>
+
+</div>
+
+
 
 <form
     action="https://tip-handler.of-701.workers.dev"
@@ -334,20 +433,116 @@ Enter amount to tip
 <!-- MESSAGE -->
 
 <label for="message">
-Send your request / message
+Your request / live message
 </label>
 
 
 <textarea
     id="message"
     name="message"
-    maxlength="1000"
+    maxlength="500"
     placeholder="Write your request or message here..."
     required></textarea>
 
 
 <div class="helper">
-Your message will be sent directly to me.
+If Maddy is live, this message will appear with your tip alert.
+</div>
+
+
+
+<!-- SOUND -->
+
+<label>
+Choose your alert sound
+</label>
+
+
+<div class="sound-options">
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-sparkle"
+            name="sound"
+            value="sparkle"
+            checked>
+
+        <label for="sound-sparkle">
+            ✨ Sparkle
+        </label>
+    </div>
+
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-coin"
+            name="sound"
+            value="coin">
+
+        <label for="sound-coin">
+            🪙 Coin
+        </label>
+    </div>
+
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-pop"
+            name="sound"
+            value="pop">
+
+        <label for="sound-pop">
+            💗 Pop
+        </label>
+    </div>
+
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-chime"
+            name="sound"
+            value="chime">
+
+        <label for="sound-chime">
+            🔔 Chime
+        </label>
+    </div>
+
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-levelup"
+            name="sound"
+            value="levelup">
+
+        <label for="sound-levelup">
+            🎮 Level Up
+        </label>
+    </div>
+
+
+    <div class="sound-option">
+        <input
+            type="radio"
+            id="sound-none"
+            name="sound"
+            value="none">
+
+        <label for="sound-none">
+            🔇 No Sound
+        </label>
+    </div>
+
+</div>
+
+
+<div class="helper">
+Your selected sound will play with your alert if Maddy is live.
 </div>
 
 
@@ -388,8 +583,6 @@ Optional — only enter this if you'd like me to reply.
 </div>
 
 
-
-<!-- CONTINUE -->
 
 <button
     class="pay-button"
