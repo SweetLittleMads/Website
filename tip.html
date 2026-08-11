@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,19 +23,10 @@ body{
     font-family:Arial,Helvetica,sans-serif;
 
     background:
-        radial-gradient(
-            circle at 50% 25%,
-            rgba(255,79,160,.10),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 20% 80%,
-            rgba(125,70,255,.07),
-            transparent 35%
-        ),
+        radial-gradient(circle at 50% 25%,rgba(255,79,160,.10),transparent 35%),
+        radial-gradient(circle at 20% 80%,rgba(125,70,255,.07),transparent 35%),
         #121212;
 
-    background-attachment:fixed;
     color:white;
 
     display:flex;
@@ -45,9 +35,6 @@ body{
 
     padding:30px 15px;
 }
-
-
-/* TIP CARD */
 
 .tip-card{
     width:100%;
@@ -62,9 +49,6 @@ body{
 
     box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
-
-
-/* HEADER */
 
 h1{
     text-align:center;
@@ -86,21 +70,17 @@ h1{
     line-height:1.5;
 }
 
-
-/* LIVE ALERT NOTICE */
-
 .live-alert{
     background:rgba(255,79,160,.08);
     border:1px solid rgba(255,79,160,.35);
     border-radius:14px;
     padding:15px 16px;
-    margin:0 0 25px;
+    margin-bottom:25px;
     text-align:center;
 }
 
 .live-alert-title{
     color:#ff4fa0;
-    font-size:16px;
     font-weight:bold;
     margin-bottom:7px;
 }
@@ -111,9 +91,6 @@ h1{
     line-height:1.5;
 }
 
-
-/* FORM */
-
 label{
     display:block;
     font-size:16px;
@@ -122,8 +99,7 @@ label{
 }
 
 input,
-textarea,
-select{
+textarea{
     width:100%;
 
     border:1px solid #555;
@@ -138,18 +114,12 @@ select{
     padding:15px;
 
     outline:none;
-
-    transition:border-color .2s ease;
 }
 
 input:focus,
-textarea:focus,
-select:focus{
+textarea:focus{
     border-color:#ff4fa0;
 }
-
-
-/* AMOUNT */
 
 .amount-box{
     display:flex;
@@ -161,8 +131,6 @@ select:focus{
     background:#121212;
 
     overflow:hidden;
-
-    transition:border-color .2s ease;
 }
 
 .amount-box:focus-within{
@@ -172,9 +140,7 @@ select:focus{
 .currency{
     font-size:24px;
     font-weight:bold;
-
     padding-left:16px;
-
     color:#ff4fa0;
 }
 
@@ -184,76 +150,10 @@ select:focus{
     font-size:21px;
 }
 
-.amount-box input:focus{
-    border:0;
-}
-
-
-/* MESSAGE */
-
 textarea{
     min-height:120px;
     resize:vertical;
 }
-
-
-/* SOUND SELECTOR */
-
-.sound-options{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
-    gap:10px;
-    margin-top:10px;
-}
-
-.sound-option{
-    position:relative;
-}
-
-.sound-option input{
-    position:absolute;
-    opacity:0;
-    pointer-events:none;
-}
-
-.sound-option label{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:7px;
-
-    margin:0;
-    padding:13px 10px;
-
-    background:#121212;
-
-    border:1px solid #555;
-    border-radius:11px;
-
-    font-size:14px;
-    font-weight:normal;
-
-    cursor:pointer;
-
-    transition:
-        border-color .2s ease,
-        background .2s ease,
-        transform .15s ease;
-}
-
-.sound-option label:hover{
-    border-color:#ff4fa0;
-    transform:translateY(-1px);
-}
-
-.sound-option input:checked + label{
-    border-color:#ff4fa0;
-    background:rgba(255,79,160,.12);
-    box-shadow:0 0 0 1px rgba(255,79,160,.15);
-}
-
-
-/* HELP TEXT */
 
 .helper{
     color:#888;
@@ -263,11 +163,72 @@ textarea{
 }
 
 
-/* PAYMENT BUTTON */
+/* SOUND CHOICES */
+
+.sound-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:10px;
+}
+
+.sound-choice{
+    position:relative;
+}
+
+.sound-choice input{
+    position:absolute;
+    opacity:0;
+}
+
+.sound-choice label{
+    margin:0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 8px;
+
+    border:1px solid #555;
+    border-radius:11px;
+
+    background:#121212;
+
+    cursor:pointer;
+
+    font-size:14px;
+    font-weight:normal;
+}
+
+.sound-choice input:checked + label{
+    border-color:#ff4fa0;
+    background:rgba(255,79,160,.14);
+}
+
+.preview-button{
+    width:100%;
+
+    border:1px solid #444;
+    background:#181818;
+    color:#aaa;
+
+    border-radius:9px;
+
+    padding:8px;
+
+    margin-top:5px;
+
+    cursor:pointer;
+}
+
+.preview-button:hover{
+    color:white;
+    border-color:#ff4fa0;
+}
 
 .pay-button{
     width:100%;
-
     border:0;
 
     margin-top:28px;
@@ -283,25 +244,7 @@ textarea{
     font-weight:bold;
 
     cursor:pointer;
-
-    box-shadow:0 8px 30px rgba(255,79,160,.12);
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
 }
-
-.pay-button:hover{
-    opacity:.95;
-
-    transform:translateY(-1px);
-
-    box-shadow:0 10px 35px rgba(255,79,160,.20);
-}
-
-
-/* REFUND */
 
 .refund{
     text-align:center;
@@ -310,29 +253,13 @@ textarea{
     margin-top:22px;
 }
 
-
-/* BACK BUTTON */
-
 .back{
     display:block;
-
     text-align:center;
-
     margin-top:20px;
-
     color:#aaa;
-
     text-decoration:none;
-
-    font-size:15px;
 }
-
-.back:hover{
-    color:white;
-}
-
-
-/* MOBILE */
 
 @media(max-width:520px){
 
@@ -345,36 +272,21 @@ textarea{
         padding:25px 20px;
     }
 
-    h1{
-        font-size:28px;
-    }
-
-    .sound-options{
+    .sound-grid{
         grid-template-columns:1fr;
     }
-
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="tip-card">
 
+<h1>Support SweetLittleMads</h1>
 
-<h1>
-Support SweetLittleMads
-</h1>
-
-
-<div class="heart">
-💜
-</div>
-
+<div class="heart">💜</div>
 
 <p class="subtitle">
 Your support helps me continue creating content.
@@ -396,25 +308,18 @@ Your support helps me continue creating content.
 </div>
 
 
-
 <form
     action="https://tip-handler.of-701.workers.dev"
     method="POST">
 
 
-<!-- TIP AMOUNT -->
-
 <label for="amount">
 Enter amount to tip
 </label>
 
-
 <div class="amount-box">
 
-<span class="currency">
-£
-</span>
-
+<span class="currency">£</span>
 
 <input
     type="number"
@@ -429,13 +334,9 @@ Enter amount to tip
 </div>
 
 
-
-<!-- MESSAGE -->
-
 <label for="message">
 Your request / live message
 </label>
-
 
 <textarea
     id="message"
@@ -444,115 +345,156 @@ Your request / live message
     placeholder="Write your request or message here..."
     required></textarea>
 
-
 <div class="helper">
 If Maddy is live, this message will appear with your tip alert.
 </div>
 
-
-
-<!-- SOUND -->
 
 <label>
 Choose your alert sound
 </label>
 
 
-<div class="sound-options">
-
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-sparkle"
-            name="sound"
-            value="sparkle"
-            checked>
-
-        <label for="sound-sparkle">
-            ✨ Sparkle
-        </label>
-    </div>
+<div class="sound-grid">
 
 
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-coin"
-            name="sound"
-            value="coin">
+<div class="sound-choice">
 
-        <label for="sound-coin">
-            🪙 Coin
-        </label>
-    </div>
+<input
+    type="radio"
+    id="sound-sparkle"
+    name="sound"
+    value="sparkle"
+    checked>
 
+<label for="sound-sparkle">
+✨ Sparkle
+</label>
 
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-pop"
-            name="sound"
-            value="pop">
+<button
+    class="preview-button"
+    type="button"
+    onclick="previewSound('sparkle')">
+▶ Preview
+</button>
 
-        <label for="sound-pop">
-            💗 Pop
-        </label>
-    </div>
+</div>
 
 
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-chime"
-            name="sound"
-            value="chime">
+<div class="sound-choice">
 
-        <label for="sound-chime">
-            🔔 Chime
-        </label>
-    </div>
+<input
+    type="radio"
+    id="sound-coin"
+    name="sound"
+    value="coin">
 
+<label for="sound-coin">
+🪙 Coin
+</label>
 
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-levelup"
-            name="sound"
-            value="levelup">
+<button
+    class="preview-button"
+    type="button"
+    onclick="previewSound('coin')">
+▶ Preview
+</button>
 
-        <label for="sound-levelup">
-            🎮 Level Up
-        </label>
-    </div>
+</div>
 
 
-    <div class="sound-option">
-        <input
-            type="radio"
-            id="sound-none"
-            name="sound"
-            value="none">
+<div class="sound-choice">
 
-        <label for="sound-none">
-            🔇 No Sound
-        </label>
-    </div>
+<input
+    type="radio"
+    id="sound-pop"
+    name="sound"
+    value="pop">
+
+<label for="sound-pop">
+💗 Pop
+</label>
+
+<button
+    class="preview-button"
+    type="button"
+    onclick="previewSound('pop')">
+▶ Preview
+</button>
+
+</div>
+
+
+<div class="sound-choice">
+
+<input
+    type="radio"
+    id="sound-chime"
+    name="sound"
+    value="chime">
+
+<label for="sound-chime">
+🔔 Chime
+</label>
+
+<button
+    class="preview-button"
+    type="button"
+    onclick="previewSound('chime')">
+▶ Preview
+</button>
+
+</div>
+
+
+<div class="sound-choice">
+
+<input
+    type="radio"
+    id="sound-levelup"
+    name="sound"
+    value="levelup">
+
+<label for="sound-levelup">
+🎮 Level Up
+</label>
+
+<button
+    class="preview-button"
+    type="button"
+    onclick="previewSound('levelup')">
+▶ Preview
+</button>
+
+</div>
+
+
+<div class="sound-choice">
+
+<input
+    type="radio"
+    id="sound-none"
+    name="sound"
+    value="none">
+
+<label for="sound-none">
+🔇 No Sound
+</label>
+
+</div>
+
 
 </div>
 
 
 <div class="helper">
-Your selected sound will play with your alert if Maddy is live.
+Pick a sound and press Preview to hear it before paying.
 </div>
 
-
-
-<!-- NAME -->
 
 <label for="name">
 Your name
 </label>
-
 
 <input
     type="text"
@@ -562,13 +504,9 @@ Your name
     placeholder="Anonymous">
 
 
-
-<!-- EMAIL -->
-
 <label for="email">
 Email (if you'd like a reply)
 </label>
-
 
 <input
     type="email"
@@ -577,11 +515,9 @@ Email (if you'd like a reply)
     maxlength="254"
     placeholder="you@example.com">
 
-
 <div class="helper">
 Optional — only enter this if you'd like me to reply.
 </div>
-
 
 
 <button
@@ -592,15 +528,12 @@ Continue to Payment
 
 </button>
 
-
 </form>
-
 
 
 <p class="refund">
 All digital purchases are non-refundable.
 </p>
-
 
 <a
     class="back"
@@ -610,10 +543,40 @@ All digital purchases are non-refundable.
 
 </a>
 
-
 </div>
 
 
-</body>
+<audio id="previewPlayer"></audio>
 
+
+<script>
+
+const soundFiles = {
+    sparkle: "/sounds/sparkle.wav",
+    coin: "/sounds/coin.wav",
+    pop: "/sounds/pop.wav",
+    chime: "/sounds/chime.wav",
+    levelup: "/sounds/levelup.wav"
+};
+
+
+function previewSound(sound){
+
+    const player =
+        document.getElementById("previewPlayer");
+
+    if(!soundFiles[sound]){
+        return;
+    }
+
+    player.pause();
+    player.currentTime = 0;
+    player.src = soundFiles[sound];
+
+    player.play();
+}
+
+</script>
+
+</body>
 </html>
