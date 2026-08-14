@@ -24,74 +24,103 @@ body{
 
     font-family:Arial,Helvetica,sans-serif;
 
+    color:white;
+    text-align:center;
+
     background:
         radial-gradient(
-            circle at 18% 18%,
-            rgba(255,80,35,.15),
-            transparent 30%
+            ellipse at 12% 18%,
+            rgba(255,72,30,.22),
+            transparent 34%
         ),
         radial-gradient(
-            circle at 82% 22%,
-            rgba(35,190,110,.14),
-            transparent 32%
+            ellipse at 88% 20%,
+            rgba(30,220,115,.20),
+            transparent 34%
         ),
         radial-gradient(
-            circle at 50% 90%,
-            rgba(20,120,75,.10),
-            transparent 38%
+            ellipse at 50% 105%,
+            rgba(25,110,70,.14),
+            transparent 42%
         ),
         linear-gradient(
-            135deg,
-            #07100d 0%,
-            #101513 45%,
-            #080a09 100%
+            145deg,
+            #080907 0%,
+            #0c1210 42%,
+            #090c0a 70%,
+            #050606 100%
         );
 
     background-attachment:fixed;
 
-    color:white;
-    text-align:center;
+    position:relative;
+}
+
+
+/* SUBTLE BACKGROUND TEXTURE */
+
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        repeating-linear-gradient(
+            115deg,
+            rgba(255,255,255,.012) 0px,
+            rgba(255,255,255,.012) 1px,
+            transparent 1px,
+            transparent 10px
+        );
+
+    opacity:.6;
 }
 
 
 /* MAIN CONTAINER */
 
 .container{
+    position:relative;
+    z-index:1;
+
     max-width:800px;
     width:90%;
 
     margin:auto;
 
-    padding:55px 20px;
+    padding:65px 20px;
 }
 
 
 /* TITLE */
 
 h1{
-    font-size:52px;
+    font-size:54px;
 
-    margin:0 0 12px;
+    margin:0 0 14px;
 
-    font-weight:800;
+    font-weight:900;
 
-    letter-spacing:-1px;
+    letter-spacing:-1.5px;
 }
 
 
-/* FIERY EMBER TEXT */
+/* EMBER */
 
 .ember-text{
 
     background:
         linear-gradient(
             180deg,
-            #fff4c7 0%,
-            #ffc15c 15%,
-            #ff7a32 38%,
-            #f04427 62%,
-            #a91912 82%,
-            #67100d 100%
+            #fff1b0 0%,
+            #ffc048 15%,
+            #ff7a2e 38%,
+            #f13d20 62%,
+            #a90f0b 83%,
+            #5c0806 100%
         );
 
     -webkit-background-clip:text;
@@ -103,42 +132,66 @@ h1{
     filter:
         drop-shadow(
             0 0 3px
-            rgba(255,190,80,.55)
+            rgba(255,210,100,.7)
         )
         drop-shadow(
-            0 0 8px
-            rgba(255,85,35,.40)
+            0 0 9px
+            rgba(255,80,30,.5)
         )
         drop-shadow(
-            0 0 15px
-            rgba(220,40,20,.25)
+            0 0 20px
+            rgba(210,25,10,.3)
         );
 }
 
 
-/* GREEN TEXT */
+/* GREEN */
 
 .green-text{
-    color:#39d98a;
 
-    text-shadow:
-        0 0 8px
-        rgba(57,217,138,.25),
-        0 0 18px
-        rgba(57,217,138,.12);
+    background:
+        linear-gradient(
+            180deg,
+            #d9ffe9 0%,
+            #8affb8 16%,
+            #39e785 38%,
+            #12b961 62%,
+            #08763d 82%,
+            #034724 100%
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+    color:transparent;
+
+    filter:
+        drop-shadow(
+            0 0 3px
+            rgba(150,255,190,.65)
+        )
+        drop-shadow(
+            0 0 9px
+            rgba(40,220,115,.45)
+        )
+        drop-shadow(
+            0 0 20px
+            rgba(10,145,70,.28)
+        );
 }
 
 
 p{
     font-size:20px;
-    color:#cccccc;
+    color:#ccc;
 }
 
 
-/* SUPPORT LINE */
+/* SUPPORT */
 
 .support-line{
-    color:#e8e8e8;
+    color:#eee;
 }
 
 .white-heart{
@@ -156,54 +209,54 @@ p{
     background:
         linear-gradient(
             135deg,
-            #ff6538,
-            #d93624
+            #ff7138,
+            #e83d24,
+            #b71f15
         );
 
     color:white;
 
     text-decoration:none;
 
-    padding:18px 40px;
+    padding:18px 42px;
 
-    border-radius:12px;
+    border-radius:13px;
 
     font-size:22px;
     font-weight:bold;
 
+    border:
+        1px solid
+        rgba(255,135,85,.45);
+
     box-shadow:
-        0 8px 30px
-        rgba(255,80,40,.18);
+        0 0 0 1px rgba(255,80,35,.08),
+        0 8px 30px rgba(230,55,25,.22);
 
     transition:
         transform .2s ease,
-        opacity .2s ease,
         box-shadow .2s ease;
 }
 
-
 .button:hover{
-    opacity:.96;
-
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 
     box-shadow:
-        0 12px 35px
-        rgba(255,80,40,.30);
+        0 0 18px rgba(255,85,35,.20),
+        0 12px 36px rgba(230,55,25,.30);
 }
 
 
 .small-text{
     font-size:14px;
 
-    color:#888;
+    color:#777;
 
     margin-top:18px;
 }
 
 
-/* FEATURED ONLYFANS */
+/* ONLYFANS */
 
 .featured-card{
     margin:45px auto 0;
@@ -221,11 +274,15 @@ p{
     min-height:98px;
 
     background:
-        rgba(18,24,21,.92);
+        linear-gradient(
+            145deg,
+            rgba(21,27,24,.95),
+            rgba(13,18,16,.95)
+        );
 
     border:
         1px solid
-        rgba(57,217,138,.20);
+        rgba(55,215,125,.24);
 
     border-radius:16px;
 
@@ -235,29 +292,27 @@ p{
 
     text-decoration:none;
 
-    backdrop-filter:
-        blur(8px);
+    backdrop-filter:blur(8px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.025);
 
     transition:
         transform .2s ease,
-        background .2s ease,
         border-color .2s ease,
         box-shadow .2s ease;
 }
 
 
 .featured-link:hover{
-    transform:
-        translateY(-2px);
-
-    background:#17201c;
+    transform:translateY(-2px);
 
     border-color:
-        rgba(57,217,138,.50);
+        rgba(65,235,140,.55);
 
     box-shadow:
-        0 8px 30px
-        rgba(57,217,138,.08);
+        0 0 22px rgba(35,200,105,.08),
+        0 10px 30px rgba(0,0,0,.25);
 }
 
 
@@ -283,7 +338,6 @@ p{
     display:flex;
 
     justify-content:center;
-    align-items:stretch;
 
     gap:10px;
 
@@ -296,7 +350,6 @@ p{
 .social-button{
     flex:1;
 
-    min-width:0;
     min-height:60px;
 
     display:flex;
@@ -307,10 +360,14 @@ p{
     gap:9px;
 
     background:
-        rgba(18,24,21,.92);
+        linear-gradient(
+            145deg,
+            rgba(21,27,24,.95),
+            rgba(13,18,16,.95)
+        );
 
     border:
-        1px solid #334039;
+        1px solid #34443b;
 
     color:white;
 
@@ -323,28 +380,20 @@ p{
     font-size:15px;
     font-weight:bold;
 
-    backdrop-filter:
-        blur(8px);
-
     transition:
         transform .2s ease,
-        background .2s ease,
         border-color .2s ease,
         box-shadow .2s ease;
 }
 
 
 .social-button:hover{
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 
-    background:#17201c;
-
-    border-color:#4f6a5c;
+    border-color:#527060;
 
     box-shadow:
-        0 8px 25px
-        rgba(0,0,0,.20);
+        0 8px 26px rgba(0,0,0,.25);
 }
 
 
@@ -367,12 +416,12 @@ p{
     .container{
         width:94%;
 
-        padding:40px 12px;
+        padding:45px 12px;
     }
 
 
     h1{
-        font-size:40px;
+        font-size:41px;
     }
 
 
@@ -417,8 +466,6 @@ p{
 <div class="container">
 
 
-<!-- TITLE -->
-
 <h1>
 
     <span class="ember-text">
@@ -431,8 +478,6 @@ p{
 
 </h1>
 
-
-<!-- SUPPORT -->
 
 <p class="support-line">
 
@@ -451,8 +496,6 @@ Your support helps me continue creating content. Thank you!
 
 
 
-<!-- TIP -->
-
 <a
     class="button"
     href="tip.html">
@@ -467,8 +510,6 @@ All digital purchases are non-refundable.
 </p>
 
 
-
-<!-- ONLYFANS -->
 
 <div class="featured-card">
 
@@ -496,12 +537,8 @@ All digital purchases are non-refundable.
 
 
 
-<!-- SOCIAL LINKS -->
-
 <div class="social-links">
 
-
-<!-- REDDIT -->
 
 <a
     class="social-button"
@@ -522,17 +559,13 @@ All digital purchases are non-refundable.
 
 
 
-<!-- X -->
-
 <a
     class="social-button"
     href="https://x.com/EmberGreenX"
     target="_blank"
     rel="noopener noreferrer">
 
-    <span>
-        X
-    </span>
+    X
 
 </a>
 
