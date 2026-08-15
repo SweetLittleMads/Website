@@ -20,6 +20,7 @@ html{
 body{
     margin:0;
     min-height:100vh;
+
     font-family:Arial,Helvetica,sans-serif;
 
     background:
@@ -33,133 +34,181 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:30px 15px;
+    padding:22px 12px;
 }
+
 
 .tip-card{
     width:100%;
-    max-width:480px;
+    max-width:460px;
 
     background:rgba(28,28,28,.96);
 
     border:1px solid #3a3a3a;
-    border-radius:20px;
+    border-radius:18px;
 
-    padding:30px;
+    padding:24px;
 
     box-shadow:0 20px 60px rgba(0,0,0,.45);
 }
 
+
 h1{
     text-align:center;
-    margin:0;
-    font-size:32px;
+
+    margin:0 0 10px;
+
+    font-size:28px;
 }
 
-.heart{
-    text-align:center;
-    font-size:36px;
-    margin:12px 0 18px;
-}
 
 .subtitle{
     text-align:center;
+
     color:#aaa;
-    margin-bottom:22px;
-    font-size:16px;
-    line-height:1.5;
+
+    margin:0 0 16px;
+
+    font-size:14px;
+    line-height:1.4;
 }
+
+
+/* LIVE ALERT */
 
 .live-alert{
     background:rgba(255,79,160,.08);
+
     border:1px solid rgba(255,79,160,.35);
-    border-radius:14px;
-    padding:15px 16px;
-    margin-bottom:25px;
+
+    border-radius:12px;
+
+    padding:11px 14px;
+
+    margin-bottom:18px;
+
     text-align:center;
 }
 
+
 .live-alert-title{
     color:#ff4fa0;
+
     font-weight:bold;
-    margin-bottom:7px;
+
+    margin-bottom:4px;
+
+    font-size:14px;
 }
+
 
 .live-alert-text{
     color:#ccc;
-    font-size:13px;
-    line-height:1.5;
+
+    font-size:12px;
+
+    line-height:1.4;
 }
+
+
+/* FORM */
 
 label{
     display:block;
-    font-size:16px;
+
+    font-size:14px;
+
     font-weight:bold;
-    margin:22px 0 8px;
+
+    margin:15px 0 6px;
 }
+
 
 input,
 textarea{
     width:100%;
 
     border:1px solid #555;
-    border-radius:12px;
+
+    border-radius:10px;
 
     background:#121212;
+
     color:white;
 
     font-family:inherit;
-    font-size:16px;
 
-    padding:15px;
+    font-size:14px;
+
+    padding:12px;
 
     outline:none;
 }
+
 
 input:focus,
 textarea:focus{
     border-color:#ff4fa0;
 }
 
+
 .amount-box{
     display:flex;
+
     align-items:center;
 
     border:1px solid #555;
-    border-radius:12px;
+
+    border-radius:10px;
 
     background:#121212;
 
     overflow:hidden;
 }
 
+
 .amount-box:focus-within{
     border-color:#ff4fa0;
 }
 
+
 .currency{
-    font-size:24px;
+    font-size:20px;
+
     font-weight:bold;
-    padding-left:16px;
+
+    padding-left:14px;
+
     color:#ff4fa0;
 }
 
+
 .amount-box input{
     border:0;
+
     border-radius:0;
-    font-size:21px;
+
+    font-size:18px;
+
+    padding:11px;
 }
 
+
 textarea{
-    min-height:120px;
+    min-height:95px;
+
     resize:vertical;
 }
 
+
 .helper{
     color:#888;
-    font-size:13px;
-    margin-top:7px;
-    line-height:1.4;
+
+    font-size:11px;
+
+    margin-top:5px;
+
+    line-height:1.35;
 }
 
 
@@ -167,126 +216,199 @@ textarea{
 
 .sound-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-top:10px;
+
+    gap:8px;
+
+    margin-top:8px;
 }
+
 
 .sound-choice{
-    position:relative;
-}
-
-.sound-choice input{
-    position:absolute;
-    opacity:0;
-}
-
-.sound-choice label{
-    margin:0;
-
     display:flex;
-    align-items:center;
-    justify-content:center;
 
-    padding:13px 8px;
+    align-items:center;
 
     border:1px solid #555;
-    border-radius:11px;
+
+    border-radius:10px;
 
     background:#121212;
 
+    overflow:hidden;
+
+    min-height:44px;
+}
+
+
+.sound-choice input{
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+.sound-choice label{
+    flex:1;
+
+    margin:0;
+
+    padding:11px 8px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     cursor:pointer;
 
-    font-size:14px;
+    font-size:12px;
+
     font-weight:normal;
+
+    border:0;
 }
+
 
 .sound-choice input:checked + label{
-    border-color:#ff4fa0;
     background:rgba(255,79,160,.14);
+
+    color:white;
 }
+
 
 .preview-button{
-    width:100%;
+    border:0;
 
-    border:1px solid #444;
+    border-left:1px solid #444;
+
     background:#181818;
+
     color:#aaa;
 
-    border-radius:9px;
+    min-width:62px;
 
-    padding:8px;
-
-    margin-top:5px;
+    padding:11px 8px;
 
     cursor:pointer;
+
+    font-size:11px;
 }
+
 
 .preview-button:hover{
     color:white;
-    border-color:#ff4fa0;
+
+    background:#202020;
 }
+
+
+/* PAYMENT BUTTON */
 
 .pay-button{
     width:100%;
+
     border:0;
 
-    margin-top:28px;
+    margin-top:20px;
 
     background:#ff4fa0;
+
     color:white;
 
-    padding:17px;
+    padding:14px;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    font-size:19px;
+    font-size:16px;
+
     font-weight:bold;
 
     cursor:pointer;
 }
 
+
 .refund{
     text-align:center;
+
     color:#777;
-    font-size:12px;
-    margin-top:22px;
+
+    font-size:11px;
+
+    margin-top:14px;
 }
+
 
 .back{
     display:block;
+
     text-align:center;
-    margin-top:20px;
+
+    margin-top:14px;
+
     color:#aaa;
+
     text-decoration:none;
+
+    font-size:12px;
 }
+
 
 @media(max-width:520px){
 
     body{
         align-items:flex-start;
-        padding:20px 12px;
+
+        padding:14px 8px;
     }
+
 
     .tip-card{
-        padding:25px 20px;
+        padding:20px 16px;
     }
 
-    .sound-grid{
-        grid-template-columns:1fr;
+
+    h1{
+        font-size:24px;
     }
+
+
+    .sound-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+
+    .sound-choice label{
+        font-size:11px;
+    }
+
+
+    .preview-button{
+        min-width:56px;
+
+        font-size:10px;
+    }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <div class="tip-card">
 
-<h1>Support Ember Green</h1>
 
-<div class="heart">💜</div>
+<h1>
+Support Ember Green 🙈
+</h1>
+
 
 <p class="subtitle">
 Your support helps me continue creating content.
@@ -300,9 +422,7 @@ Your support helps me continue creating content.
     </div>
 
     <div class="live-alert-text">
-        If Ember is currently live on Twitch, YouTube or another streaming platform,
-        your name, message and selected sound can appear live with your tip alert
-        after your payment is completed.
+        If I’m live on any platform, your tip will pop up on my stream.
     </div>
 
 </div>
@@ -317,19 +437,22 @@ Your support helps me continue creating content.
 Enter amount to tip
 </label>
 
+
 <div class="amount-box">
 
-<span class="currency">£</span>
+    <span class="currency">
+        £
+    </span>
 
-<input
-    type="number"
-    id="amount"
-    name="amount"
-    min="5"
-    step="0.01"
-    inputmode="decimal"
-    placeholder="5.00"
-    required>
+    <input
+        type="number"
+        id="amount"
+        name="amount"
+        min="5"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="5.00"
+        required>
 
 </div>
 
@@ -338,6 +461,7 @@ Enter amount to tip
 Your message
 </label>
 
+
 <textarea
     id="message"
     name="message"
@@ -345,8 +469,9 @@ Your message
     placeholder="Write your message here..."
     required></textarea>
 
+
 <div class="helper">
-I'll reply within 24 hours to thank you with a personalised message ♡
+I’ll reply within 24 hours to thank you with a personalised message ♡
 </div>
 
 
@@ -360,126 +485,126 @@ Choose your alert sound
 
 <div class="sound-choice">
 
-<input
-    type="radio"
-    id="sound-sparkle"
-    name="sound"
-    value="sparkle"
-    checked>
+    <input
+        type="radio"
+        id="sound-sparkle"
+        name="sound"
+        value="sparkle"
+        checked>
 
-<label for="sound-sparkle">
-✨ Sparkle
-</label>
+    <label for="sound-sparkle">
+        ✨ Sparkle
+    </label>
 
-<button
-    class="preview-button"
-    type="button"
-    onclick="previewSound('sparkle')">
-▶ Preview
-</button>
-
-</div>
-
-
-<div class="sound-choice">
-
-<input
-    type="radio"
-    id="sound-coin"
-    name="sound"
-    value="coin">
-
-<label for="sound-coin">
-🪙 Coin
-</label>
-
-<button
-    class="preview-button"
-    type="button"
-    onclick="previewSound('coin')">
-▶ Preview
-</button>
+    <button
+        class="preview-button"
+        type="button"
+        onclick="previewSound('sparkle')">
+        ▶
+    </button>
 
 </div>
 
 
 <div class="sound-choice">
 
-<input
-    type="radio"
-    id="sound-pop"
-    name="sound"
-    value="pop">
+    <input
+        type="radio"
+        id="sound-coin"
+        name="sound"
+        value="coin">
 
-<label for="sound-pop">
-💗 Pop
-</label>
+    <label for="sound-coin">
+        🪙 Coin
+    </label>
 
-<button
-    class="preview-button"
-    type="button"
-    onclick="previewSound('pop')">
-▶ Preview
-</button>
-
-</div>
-
-
-<div class="sound-choice">
-
-<input
-    type="radio"
-    id="sound-chime"
-    name="sound"
-    value="chime">
-
-<label for="sound-chime">
-🔔 Chime
-</label>
-
-<button
-    class="preview-button"
-    type="button"
-    onclick="previewSound('chime')">
-▶ Preview
-</button>
+    <button
+        class="preview-button"
+        type="button"
+        onclick="previewSound('coin')">
+        ▶
+    </button>
 
 </div>
 
 
 <div class="sound-choice">
 
-<input
-    type="radio"
-    id="sound-levelup"
-    name="sound"
-    value="levelup">
+    <input
+        type="radio"
+        id="sound-pop"
+        name="sound"
+        value="pop">
 
-<label for="sound-levelup">
-🎮 Level Up
-</label>
+    <label for="sound-pop">
+        💗 Pop
+    </label>
 
-<button
-    class="preview-button"
-    type="button"
-    onclick="previewSound('levelup')">
-▶ Preview
-</button>
+    <button
+        class="preview-button"
+        type="button"
+        onclick="previewSound('pop')">
+        ▶
+    </button>
 
 </div>
 
 
 <div class="sound-choice">
 
-<input
-    type="radio"
-    id="sound-none"
-    name="sound"
-    value="none">
+    <input
+        type="radio"
+        id="sound-chime"
+        name="sound"
+        value="chime">
 
-<label for="sound-none">
-🔇 No Sound
-</label>
+    <label for="sound-chime">
+        🔔 Chime
+    </label>
+
+    <button
+        class="preview-button"
+        type="button"
+        onclick="previewSound('chime')">
+        ▶
+    </button>
+
+</div>
+
+
+<div class="sound-choice">
+
+    <input
+        type="radio"
+        id="sound-levelup"
+        name="sound"
+        value="levelup">
+
+    <label for="sound-levelup">
+        🎮 Level Up
+    </label>
+
+    <button
+        class="preview-button"
+        type="button"
+        onclick="previewSound('levelup')">
+        ▶
+    </button>
+
+</div>
+
+
+<div class="sound-choice">
+
+    <input
+        type="radio"
+        id="sound-none"
+        name="sound"
+        value="none">
+
+    <label for="sound-none">
+        🔇 No Sound
+    </label>
 
 </div>
 
@@ -488,13 +613,14 @@ Choose your alert sound
 
 
 <div class="helper">
-Pick a sound and press Preview to hear it before paying.
+Tap ▶ to preview a sound before paying.
 </div>
 
 
 <label for="name">
 Your name
 </label>
+
 
 <input
     type="text"
@@ -508,6 +634,7 @@ Your name
 Email (optional)
 </label>
 
+
 <input
     type="email"
     id="email"
@@ -515,8 +642,9 @@ Email (optional)
     maxlength="254"
     placeholder="you@example.com">
 
+
 <div class="helper">
-Only enter this if you'd like me to reply to your message.
+Only enter this if you’d like me to reply to your message.
 </div>
 
 
@@ -524,9 +652,10 @@ Only enter this if you'd like me to reply to your message.
     class="pay-button"
     type="submit">
 
-Continue to Payment
+    Continue to Payment
 
 </button>
+
 
 </form>
 
@@ -535,13 +664,15 @@ Continue to Payment
 All tips are non-refundable.
 </p>
 
+
 <a
     class="back"
     href="index.html">
 
-← Back to Ember Green
+    ← Back to Ember Green
 
 </a>
+
 
 </div>
 
@@ -570,13 +701,18 @@ function previewSound(sound){
     }
 
     player.pause();
+
     player.currentTime = 0;
-    player.src = soundFiles[sound];
+
+    player.src =
+        soundFiles[sound];
 
     player.play();
 }
 
 </script>
 
+
 </body>
+
 </html>
